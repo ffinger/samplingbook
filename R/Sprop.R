@@ -76,7 +76,7 @@ function(y, m, n=length(y), N=Inf, level=0.95){
     ac.anteil = c(uac,oac)
   }
 # calculation of se
-  if(var>0) se <- sqrt(var)
+  if(var>0 & !is.na(var)) se <- sqrt(var)
   else{
     se <- NA
     warning("Standard error is ", sQuote("NA"),", because calculations for variance of mean has been not positive. Confidence intervals may not be valid.")
